@@ -1,97 +1,52 @@
-import { useEffect, useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import Svg, { Path, SvgXml } from 'react-native-svg';
 
-const SplashScreen = ({ navigation }) => {
-  const [input, setInput] = useState<string>(''); // User input for character search
-  const [loading, setLoading] = useState<boolean>(false); // Loading state
+import { Component } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
+import { IRootStackParamList } from '../types/routes.type';
 
-  const handleSubmit = () => {
-    // submit functionality here
-  };
+type SplashProps = StackScreenProps<IRootStackParamList, 'Splash'>;
 
-  // Render the UI components
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Keibell.</Text>
-      <TextInput
-        value={input}
-        placeholder="Enter character name"
-        onChangeText={(input) => setInput(input)}
-        style={styles.inputField}
-        editable={true}
-      />
+export class Splash extends Component<SplashProps> {
+  timeoutHandle: number | undefined;
 
-      {/* Button to trigger the character search */}
-      <TouchableOpacity
-        onPress={handleSubmit}
-        style={styles.button}
-        disabled={loading}
-      >
-        <Text style={styles.buttonText}>Submit</Text>
-      </TouchableOpacity>
+  componentDidMount() {
+    this.timeoutHandle = window.setTimeout(() => {
+      this.props.navigation.navigate('Welcome');
+    }, 3000);
+  }
 
-      <Text
-        style={styles.next}
-        onPress={() => navigation.navigate('LoginScreen')}
-      >
-        Go to second screen
-      </Text>
+  componentWillUnmount() {
+    if (this.timeoutHandle) {
+      clearTimeout(this.timeoutHandle);
+    }
+  }
 
-      {/* Display the status bar */}
-      <StatusBar style="auto" />
-    </View>
-  );
-};
+  render() {
+    return (
+      <View style={styles.container}>
+        <SvgXml
+          style={styles.logo}
+          xml={`<svg width="139" height="125" viewBox="0 0 139 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M61.2783 79.9642L57.9178 71.6514L49.605 75.0119L46.2445 66.6991L58.7039 61.6682C60.9836 60.7445 63.6169 61.8647 64.5406 64.1443L69.5715 76.6037L61.2783 79.9642ZM36.0058 61.1769L39.5038 52.923L31.25 49.4249L34.748 41.1711L47.1289 46.4182C49.3888 47.3811 50.4697 50.0341 49.5068 52.2941L44.2597 64.6749L36.0058 61.1769ZM31.4269 30.0283L39.7397 26.6678L36.3792 18.355L44.692 14.9945L49.7229 27.4539C50.6466 29.7336 49.5264 32.3669 47.2468 33.2906L34.7874 38.3215L31.4269 30.0087V30.0283ZM50.2142 4.75578L58.4681 8.25385L61.9662 -1.52588e-05L70.22 3.49805L64.9729 15.8789C64.01 18.1388 61.3569 19.2197 59.097 18.2568L46.7162 13.0097L50.2142 4.75578ZM81.3628 0.176857L84.7233 8.48968L93.0361 5.12917L96.3966 13.442L83.9372 18.4729C81.6575 19.3966 79.0242 18.2764 78.1005 15.9968L73.0696 3.53735L81.3824 0.176857H81.3628ZM106.635 18.9839L103.137 27.2377L111.391 30.7358L107.893 38.9897L95.5122 33.7426C93.2523 32.7796 92.1714 30.1266 93.1343 27.8666L98.3814 15.4858L106.635 18.9839ZM111.214 50.1324L102.901 53.4929L106.262 61.8057L97.9491 65.1662L92.9182 52.7068C91.9945 50.4272 93.1147 47.7938 95.3943 46.8702L107.854 41.8392L111.214 50.1324ZM92.4269 75.3853L84.173 71.8872L80.6749 80.1411L72.4211 76.643L77.6682 64.2622C78.6311 62.0023 81.2841 60.9214 83.5441 61.8843L95.9249 67.1314L92.4269 75.3853Z" fill="#1F211F"/>
+    <path d="M7.90694 90.7722H1.97094C0.881126 90.8185 0 91.7223 0 92.8347V122.451C0 123.586 0.927501 124.513 2.06369 124.513H7.90694V111.999H12.3821L21.6108 124.513H31.28L19.1993 108.801L29.8423 90.7722H21.0543L12.8459 105.302H7.88376V90.7722H7.90694ZM119.045 90.7722V124.513H126.604V90.7722H119.045ZM100.495 110.516C100.68 108.5 102.373 107.04 105.063 107.04C107.474 107.04 109.097 108.616 109.097 110.516H100.495ZM114.361 117.283C112.784 118.025 109.747 118.604 106.848 118.604C103.463 118.604 100.843 117.422 100.518 114.919H115.845C117.468 105.441 111.671 100.969 104.947 100.969C101.515 100.969 98.6629 102.104 96.4369 104.306C94.2341 106.507 93.1443 109.404 93.1443 112.996C93.1443 116.588 94.3732 119.531 96.7847 121.732C99.1962 123.888 102.535 124.977 106.802 124.977C110.094 124.977 113.433 124.05 115.404 122.914L114.384 117.26L114.361 117.283ZM58.4325 99.0221C60.844 99.0221 62.6063 97.3072 62.6063 94.8971C62.6063 92.487 60.844 90.7722 58.4325 90.7722C56.021 90.7722 54.3052 92.487 54.3052 94.8971C54.3052 97.3072 55.9283 99.0221 58.4325 99.0221ZM54.653 101.479V124.513H62.2121V101.479H54.653ZM36.103 110.516C36.2885 108.5 37.9812 107.04 40.6709 107.04C43.0824 107.04 44.7055 108.616 44.7055 110.516H36.103ZM49.9691 117.283C48.3923 118.025 45.3548 118.604 42.4563 118.604C39.071 118.604 36.474 117.422 36.1262 114.919H51.4531C53.0762 105.441 47.2793 100.969 40.555 100.969C37.1232 100.969 34.2711 102.104 32.0451 104.306C29.8423 106.507 28.7525 109.404 28.7525 112.996C28.7525 116.588 29.9815 119.531 32.393 121.732C34.8045 123.888 38.1435 124.977 42.41 124.977C45.7026 124.977 49.0416 124.05 51.0125 122.914L49.9923 117.26L49.9691 117.283ZM78.5129 107.759C81.4577 107.759 83.6142 109.867 83.6142 113.019C83.6142 116.171 81.4577 118.233 78.5129 118.233C75.5681 118.233 73.5972 116.124 73.5972 113.019C73.5972 109.914 75.7072 107.759 78.5129 107.759ZM73.5044 90.7258H66.1308V124.513H73.4581V122.752C76.7043 122.752 74.4551 125 80.4839 125C87.3474 125 91.2429 119.554 91.2429 113.065C91.2429 106.577 87.3938 100.992 80.5071 100.992C74.4551 100.992 76.7507 103.263 73.4812 103.263V90.749L73.5044 90.7258ZM130.546 90.7722V124.513H136.041C137.177 124.513 138.105 123.586 138.105 122.451V92.8347C138.105 91.6991 137.177 90.7722 136.041 90.7722H130.546Z" fill="#1F211F"/>
+    </svg>
+    `}
+        />
+      </View>
+    );
+  }
+}
 
-export default SplashScreen;
-
-// Styles for the components
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1, // Takes up the full height of the screen
+    justifyContent: 'center', // Centers vertically
+    alignItems: 'center', // Centers horizontally
   },
-  inputField: {
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
-    width: '80%',
-    paddingHorizontal: 10,
-    marginVertical: 10,
-  },
-  button: {
-    backgroundColor: 'blue',
-    padding: 10,
-    borderRadius: 5,
-    marginTop: 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginTop: 20,
-    color: '#000',
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  image: {
-    width: 200,
-    height: 200,
-    resizeMode: 'contain',
-  },
-  next: {
-    marginTop: 40,
+  logo: {
+    width: 150, // Replace with your desired width
+    height: 150, // Replace with your desired height
+    // You can also add other styles here, such as borderRadius for rounded images
   },
 });

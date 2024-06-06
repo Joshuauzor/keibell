@@ -1,19 +1,24 @@
 // Import necessary components and libraries
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import SplashScreen from './splash';
-// import InfoScreen from './login';
+import { Splash } from './splash';
+import { Welcome } from './welcome';
+import { IRootStackParamList } from '../types/routes.type';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<IRootStackParamList>();
 
 // Define the main App component
 export default function App() {
   return (
-    // <NavigationContainer>
-    <Stack.Navigator initialRouteName="HomeScreen">
-      <Stack.Screen name="HomeScreen" component={SplashScreen} />
-      {/* <Stack.Screen name="InfoScreen" component={InfoScreen} /> */}
+    <Stack.Navigator initialRouteName="Splash">
+      <Stack.Screen
+        name="Splash"
+        component={Splash}
+        options={{
+          title: 'Splash',
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen name="Welcome" component={Welcome} />
     </Stack.Navigator>
-    // </NavigationContainer>
   );
 }
