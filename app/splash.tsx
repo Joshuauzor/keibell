@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 
 const SplashScreen = ({ navigation }) => {
-  // State variables to manage input, character data, loading state, and characters list
   const [input, setInput] = useState<string>(''); // User input for character search
   const [loading, setLoading] = useState<boolean>(false); // Loading state
 
@@ -21,7 +20,7 @@ const SplashScreen = ({ navigation }) => {
   // Render the UI components
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Rick and Morty guide.</Text>
+      <Text style={styles.title}>Keibell.</Text>
       <TextInput
         value={input}
         placeholder="Enter character name"
@@ -41,9 +40,9 @@ const SplashScreen = ({ navigation }) => {
 
       <Text
         style={styles.next}
-        onPress={() => navigation.navigate('InfoScreen')}
+        onPress={() => navigation.navigate('LoginScreen')}
       >
-        Go to Next screen
+        Go to second screen
       </Text>
 
       {/* Display the status bar */}

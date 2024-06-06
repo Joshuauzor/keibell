@@ -9,11 +9,11 @@ const Stack = createStackNavigator();
 // Define the main App component
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="SplashScreen">
-        <Stack.Screen name="SplashScreen" component={SplashScreen} />
-        {/* <Stack.Screen name="InfoScreen" component={InfoScreen} /> */}
-      </Stack.Navigator>
-    </NavigationContainer>
+    // <NavigationContainer>
+    <Stack.Navigator initialRouteName="HomeScreen">
+      <Stack.Screen name="HomeScreen" component={SplashScreen} />
+      {/* <Stack.Screen name="InfoScreen" component={InfoScreen} /> */}
+    </Stack.Navigator>
+    // </NavigationContainer>
   );
 }
