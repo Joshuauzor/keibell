@@ -11,7 +11,7 @@ export function InfoText({ text, subText, icon }: InfoTextProps) {
   return (
     <View style={styles.container}>
       <SvgXml style={styles.icon} xml={`${icon}`} />
-      <View>
+      <View style={styles.desc}>
         <Text style={styles.infoText}>{text}</Text>
         <Text style={styles.subInfoText}>{subText}</Text>
       </View>
@@ -46,5 +46,9 @@ const styles = StyleSheet.create({
   icon: {
     width: 40,
     height: 40,
+  },
+
+  desc: {
+    marginRight: 70,
   },
 });

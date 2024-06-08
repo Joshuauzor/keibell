@@ -12,6 +12,7 @@ const Stack = createStackNavigator<IRootStackParamList>();
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
     'Roboto-Black': require('../assets/fonts/Roboto-Black.ttf'),
+    'Roboto-Bold': require('../assets/fonts/Roboto-Bold.ttf'),
     'Roboto-Regular': require('../assets/fonts/Roboto-Regular.ttf'),
     'fonnts.com-Fieldwork-Geo-Fat': require('../assets/fonts/fonnts.com-Fieldwork-Geo-Black.otf'),
     'fonnts.com-Fieldwork-Geo-Regular': require('../assets/fonts/fonnts.com-Fieldwork-Geo-Regular.otf'),

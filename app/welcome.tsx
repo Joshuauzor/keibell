@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { IRootStackParamList } from '../types/routes.type';
 import { InfoText } from '../components/InfoText';
@@ -11,7 +11,6 @@ const Welcome: React.FC<WelcomeProps> = ({ navigation }) => {
       <Text style={styles.subHeader}>
         Gestiona tus reservas desde tu móvil.
       </Text>
-
       <InfoText
         text="Check in sin esperas"
         subText="Simplemente llega y disfruta de tu habitación."
@@ -44,6 +43,12 @@ const Welcome: React.FC<WelcomeProps> = ({ navigation }) => {
         
       '
       ></InfoText>
+      <View style={styles.buttonStickers}>
+        <Text style={styles.question}>¿Tienes una cuenta? Inicia sesión</Text>
+        <TouchableOpacity style={styles.loginButton} onPress={() => {}}>
+          <Text style={styles.loginButtonText}>Login</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -71,5 +76,33 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 58,
     fontFamily: 'Roboto-Regular',
+  },
+  question: {
+    fontFamily: 'Roboto-Regular',
+    fontSize: 16,
+    fontWeight: 400,
+    textAlign: 'center',
+    marginTop: 24,
+    marginBottom: 16,
+  },
+  loginButton: {
+    width: '100%',
+    paddingVertical: 14,
+    backgroundColor: '#1F211F',
+    borderRadius: 48,
+    alignItems: 'center', // Center the text horizontally
+  },
+  loginButtonText: {
+    color: '#FFFFFF',
+    fontFamily: 'Roboto-Bold',
+    fontSize: 18,
+    fontWeight: 700,
+    textAlign: 'center',
+  },
+  buttonStickers: {
+    position: 'absolute',
+    bottom: 20,
+    left: 20,
+    right: 20,
   },
 });
