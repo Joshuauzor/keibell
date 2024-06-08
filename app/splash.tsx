@@ -18,10 +18,6 @@ const Splash: React.FC<SplashProps> = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text
-        style={styles.logo}
-        onPress={() => navigation.navigate('Welcome')}
-      ></Text>
       <SvgXml
         style={styles.logo}
         xml={`<svg width="139" height="125" viewBox="0 0 139 125" fill="none" xmlns="http://www.w3.org/2000/svg">

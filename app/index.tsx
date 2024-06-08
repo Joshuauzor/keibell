@@ -1,7 +1,7 @@
 // Import necessary components and libraries
 import { createStackNavigator } from '@react-navigation/stack';
 import Splash from './splash';
-import { Welcome } from './welcome';
+import Welcome from './welcome';
 import { IRootStackParamList } from '../types/routes.type';
 
 const Stack = createStackNavigator<IRootStackParamList>();
@@ -18,7 +18,14 @@ export default function App() {
           headerShown: false,
         }}
       />
-      <Stack.Screen name="Welcome" component={Welcome} />
+      <Stack.Screen
+        name="Welcome"
+        component={Welcome}
+        options={{
+          title: 'Welcome',
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 }
