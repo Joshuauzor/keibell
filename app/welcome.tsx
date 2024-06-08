@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { IRootStackParamList } from '../types/routes.type';
-
+import { InfoText } from '../components/InfoText';
 type WelcomeProps = StackScreenProps<IRootStackParamList, 'Welcome'>;
 
 const Welcome: React.FC<WelcomeProps> = ({ navigation }) => {
@@ -11,10 +11,15 @@ const Welcome: React.FC<WelcomeProps> = ({ navigation }) => {
       <Text style={styles.subHeader}>
         Gestiona tus reservas desde tu móvil.
       </Text>
-      <Text style={styles.infoText}>Check in sin esperas</Text>
-      <Text style={styles.subInfoText}>
-        Simplemente llega y disfruta de tu habitación.
-      </Text>
+
+      <InfoText
+        text="Check in sin esperas"
+        subText="Simplemente llega y disfruta de tu habitación."
+      ></InfoText>
+      <InfoText
+        text="Entra y sal sin llaves"
+        subText="Abre y cierra la puerta de tu habitación cómodamente con el móvil."
+      ></InfoText>
     </View>
   );
 };
@@ -34,26 +39,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 12,
     marginTop: 24,
+    fontFamily: 'fonnts.com-Fieldwork-Geo-Fat',
   },
   subHeader: {
     fontSize: 18,
     fontWeight: 400,
     textAlign: 'center',
     marginBottom: 58,
-  },
-
-  infoText: {
-    fontSize: 20,
-    fontWeight: 700,
-    textAlign: 'center',
-    marginBottom: 4,
-  },
-
-  subInfoText: {
-    fontSize: 14,
-    fontWeight: 400,
-    textAlign: 'center',
-    marginBottom: 4,
-    color: '#1F211F',
+    fontFamily: 'Roboto-Black',
   },
 });

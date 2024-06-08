@@ -7,6 +7,9 @@
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
@@ -28,6 +31,18 @@
     },
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Roboto-Black.ttf",
+            "./assets/font/Roboto-Bold.ttf",
+            "./assets/fonts/fonnts.com-Fieldwork-Geo-Black.otf"
+          ]
+        }
+      ]
+    ]
   }
 }
