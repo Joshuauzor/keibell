@@ -44,11 +44,12 @@ const styles = StyleSheet.create({
   },
 
   icon: {
+    marginTop: 30,
     width: 40,
     height: 40,
   },
 
   desc: {
-    marginRight: 70,
+    // marginRight: 70,
   },
 });

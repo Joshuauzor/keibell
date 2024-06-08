@@ -44,7 +44,10 @@ const Welcome: React.FC<WelcomeProps> = ({ navigation }) => {
       '
       ></InfoText>
       <View style={styles.buttonStickers}>
-        <Text style={styles.question}>¿Tienes una cuenta? Inicia sesión</Text>
+        <Text style={styles.question}>
+          <Text>¿Tienes una cuenta?</Text>
+          <Text style={styles.initiate}> Inicia sesión</Text>
+        </Text>
         <TouchableOpacity style={styles.loginButton} onPress={() => {}}>
           <Text style={styles.loginButtonText}>Login</Text>
         </TouchableOpacity>
@@ -84,13 +87,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 24,
     marginBottom: 16,
+    flexDirection: 'row',
+  },
+  initiate: {
+    textDecorationLine: 'underline',
   },
   loginButton: {
     width: '100%',
     paddingVertical: 14,
     backgroundColor: '#1F211F',
     borderRadius: 48,
-    alignItems: 'center', // Center the text horizontally
+    alignItems: 'center',
   },
   loginButtonText: {
     color: '#FFFFFF',
