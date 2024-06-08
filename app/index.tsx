@@ -1,6 +1,6 @@
 // Import necessary components and libraries
 import { createStackNavigator } from '@react-navigation/stack';
-import { Splash } from './splash';
+import Splash from './splash';
 import { Welcome } from './welcome';
 import { IRootStackParamList } from '../types/routes.type';
 
