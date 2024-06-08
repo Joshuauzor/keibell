@@ -1,7 +1,8 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { IRootStackParamList } from '../types/routes.type';
-import { InfoText } from '../components/InfoText';
+import { InfoText } from '@/components/InfoText';
+import { BusyButton } from '@/components/BusyButton';
 type WelcomeProps = StackScreenProps<IRootStackParamList, 'Welcome'>;
 
 const Welcome: React.FC<WelcomeProps> = ({ navigation }) => {
@@ -48,9 +49,7 @@ const Welcome: React.FC<WelcomeProps> = ({ navigation }) => {
           <Text>¿Tienes una cuenta?</Text>
           <Text style={styles.initiate}> Inicia sesión</Text>
         </Text>
-        <TouchableOpacity style={styles.loginButton} onPress={() => {}}>
-          <Text style={styles.loginButtonText}>Login</Text>
-        </TouchableOpacity>
+        <BusyButton text="Comenzar"></BusyButton>
       </View>
     </View>
   );
@@ -92,20 +91,7 @@ const styles = StyleSheet.create({
   initiate: {
     textDecorationLine: 'underline',
   },
-  loginButton: {
-    width: '100%',
-    paddingVertical: 14,
-    backgroundColor: '#1F211F',
-    borderRadius: 48,
-    alignItems: 'center',
-  },
-  loginButtonText: {
-    color: '#FFFFFF',
-    fontFamily: 'Roboto-Bold',
-    fontSize: 18,
-    fontWeight: 700,
-    textAlign: 'center',
-  },
+
   buttonStickers: {
     position: 'absolute',
     bottom: 20,
