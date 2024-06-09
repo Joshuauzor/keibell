@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#1F211F',
     borderRadius: 48,
     alignItems: 'center',
+    height: 48,
   },
   loginButtonText: {
     color: '#FFFFFF',
