@@ -11,7 +11,8 @@ export function InfoText({ text, subText, icon }: InfoTextProps) {
   return (
     <View style={styles.container}>
       <SvgXml style={styles.icon} xml={`${icon}`} />
-      <View style={styles.desc}>
+
+      <View style={styles.textContainer}>
         <Text style={styles.infoText}>{text}</Text>
         <Text style={styles.subInfoText}>{subText}</Text>
       </View>
@@ -21,10 +22,17 @@ export function InfoText({ text, subText, icon }: InfoTextProps) {
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
     flexDirection: 'row',
-    gap: 20,
-    width: '100%',
+  },
+
+  textContainer: {
+    width: 320,
+  },
+  icon: {
+    marginRight: 17, // Margin to the right to separate from text
+    marginTop: 30,
+    width: 40,
+    height: 40,
   },
   infoText: {
     fontSize: 20,
@@ -33,7 +41,6 @@ const styles = StyleSheet.create({
     marginBottom: 4,
     fontFamily: 'fonnts.com-Fieldwork-Geo-Bold',
   },
-
   subInfoText: {
     fontSize: 14,
     fontWeight: 400,
@@ -42,14 +49,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto-Regular',
     color: '#1F211F',
   },
-
-  icon: {
-    marginTop: 30,
-    width: 40,
-    height: 40,
-  },
-
-  desc: {
-    // marginRight: 70,
+  fixedSpace: {
+    // width: 20, // Fixed space on the right
+    height: 1,
   },
 });
