@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     width: 320,
   },
   icon: {
-    marginRight: 17, // Margin to the right to separate from text
+    marginRight: 17,
     marginTop: 30,
     width: 40,
     height: 40,
@@ -48,9 +48,5 @@ const styles = StyleSheet.create({
     marginBottom: 56,
     fontFamily: 'Roboto-Regular',
     color: '#1F211F',
-  },
-  fixedSpace: {
-    // width: 20, // Fixed space on the right
-    height: 1,
   },
 });
