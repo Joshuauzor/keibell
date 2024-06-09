@@ -4,7 +4,8 @@ import Splash from './splash';
 import Welcome from './welcome';
 import { IRootStackParamList } from '../types/routes.type';
 import { useFonts } from 'expo-font';
-import { useCallback } from 'react';
+import Signin from './signin';
+import { CustomHeader } from '@/components/CustomHeader';
 
 const Stack = createStackNavigator<IRootStackParamList>();
 
@@ -38,6 +39,13 @@ export default function App() {
           options={{
             title: 'Welcome',
             headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Signin"
+          component={Signin}
+          options={{
+            header: () => <CustomHeader />,
           }}
         />
       </Stack.Navigator>

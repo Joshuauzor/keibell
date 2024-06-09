@@ -1,13 +1,19 @@
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import {
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  GestureResponderEvent,
+} from 'react-native';
 import { ViewProps } from 'react-native-svg/lib/typescript/fabric/utils';
 
 export type BusyButtonProps = ViewProps & {
   text?: string;
+  onPress: (event: GestureResponderEvent) => void;
 };
 
-export function BusyButton({ text }: BusyButtonProps) {
+export function BusyButton({ text, onPress }: BusyButtonProps) {
   return (
-    <TouchableOpacity style={styles.loginButton} onPress={() => {}}>
+    <TouchableOpacity style={styles.loginButton} onPress={onPress}>
       <Text style={styles.loginButtonText}>{text}</Text>
     </TouchableOpacity>
   );
