@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '400',
     textAlign: 'center',
-    marginBottom: ' 5%',
+    marginBottom: '11%',
     fontFamily: 'Roboto-Regular',
     color: '#1F211F',
   },

@@ -33,24 +33,6 @@
     "experiments": {
       "typedRoutes": true
     },
-    "plugins": [
-      [
-        "expo-font",
-        {
-          "fonts": [
-            "./assets/fonts/Roboto-Black.ttf",
-            "./assets/font/Roboto-Bold.ttf",
-            "./assets/fonts/Roboto-Regular.ttf",
-            "./assets/fonts/Roboto-Bold.ttf",
-            "./assets/fonts/fonnts.com-Fieldwork-Geo-Black.otf",
-            "./assets/fonts/fonnts.com-Fieldwork_Hum_Regular.otf",
-            "./assets/fonts/fonnts.com-Fieldwork-Geo-Regular.otf",
-            "./assets/fonts/fonnts.com-Fieldwork-Geo-Demibold.otf",
-            "./assets/fonts/fonnts.com-Fieldwork-Geo-Bold.otf"
-          ]
-        }
-      ]
-    ],
     "extra": {
       "eas": {
         "projectId": "0b1de8d9-34e7-4f23-887c-215d4340693b"

@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 8,
     marginTop: 33,
-    fontFamily: 'fonnts.com-Fieldwork-Geo-Fat',
+    fontFamily: 'fonnts.com-Fieldwork-Geo-Black',
   },
   subHeader: {
     fontSize: 16,
