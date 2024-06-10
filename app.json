@@ -22,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.joshuauzor.keibell"
     },
     "web": {
       "bundler": "metro",
@@ -49,6 +50,11 @@
           ]
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "0b1de8d9-34e7-4f23-887c-215d4340693b"
+      }
+    }
   }
 }

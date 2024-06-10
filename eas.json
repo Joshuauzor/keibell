@@ -1,0 +1,10 @@
+{
+    "build": {
+        "local": {
+            "android": {
+                "buildType": "apk"
+            }
+        },
+        "production": {}
+    }
+}
