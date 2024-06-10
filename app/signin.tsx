@@ -51,11 +51,8 @@ const Signin: React.FC<SigninProps> = ({ navigation }) => {
         ></LoginOption>
       </View>
       <Text style={styles.desc}>O usa tu correo electrónico</Text>
-      <BusyButton
-        text="Entrar con tu email
-"
-        onPress={() => {}}
-      ></BusyButton>
+
+      <BusyButton text="Entrar con tu email" onPress={() => {}}></BusyButton>
       <Text style={styles.question}>
         <Text>¿No tienes una cuenta?</Text>
         <Text style={styles.initiate}> Crea una ahora</Text>
@@ -77,7 +74,7 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 28,
-    fontWeight: 700,
+    fontWeight: '700',
     textAlign: 'center',
     marginBottom: 8,
     marginTop: 33,
@@ -85,7 +82,7 @@ const styles = StyleSheet.create({
   },
   subHeader: {
     fontSize: 16,
-    fontWeight: 400,
+    fontWeight: '400',
     textAlign: 'center',
     marginBottom: 58,
     fontFamily: 'Roboto-Regular',
@@ -98,7 +95,7 @@ const styles = StyleSheet.create({
   },
   desc: {
     fontSize: 16,
-    fontWeight: 400,
+    fontWeight: '400',
     textAlign: 'center',
     marginBottom: 12,
     fontFamily: 'Roboto-Regular',
@@ -106,7 +103,7 @@ const styles = StyleSheet.create({
   question: {
     fontFamily: 'Roboto-Regular',
     fontSize: 16,
-    fontWeight: 400,
+    fontWeight: '400',
     textAlign: 'center',
     marginTop: 64,
     marginBottom: 16,

@@ -1,9 +1,8 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { IRootStackParamList } from '../types/routes.type';
 import { InfoText } from '@/components/InfoText';
 import { BusyButton } from '@/components/BusyButton';
-import { SvgXml } from 'react-native-svg';
 import { LanguageSelector } from '@/components/LanguageSelector';
 type WelcomeProps = StackScreenProps<IRootStackParamList, 'Welcome'>;
 
@@ -76,7 +75,7 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 36,
-    fontWeight: 700,
+    fontWeight: '700',
     textAlign: 'center',
     marginBottom: 12,
     marginTop: 54,
@@ -84,7 +83,7 @@ const styles = StyleSheet.create({
   },
   subHeader: {
     fontSize: 18,
-    fontWeight: 400,
+    fontWeight: '400',
     textAlign: 'center',
     marginBottom: 58,
     fontFamily: 'Roboto-Regular',
@@ -92,7 +91,7 @@ const styles = StyleSheet.create({
   question: {
     fontFamily: 'Roboto-Regular',
     fontSize: 16,
-    fontWeight: 400,
+    fontWeight: '400',
     textAlign: 'center',
     marginTop: 24,
     marginBottom: 16,
@@ -112,6 +111,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     gap: 17,
-    paddingRight: 40,
+    paddingRight: '4%',
   },
 });

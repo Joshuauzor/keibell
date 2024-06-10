@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   language: {
     fontSize: 12,
-    fontWeight: 700,
+    fontWeight: '700',
     fontFamily: 'Roboto-Bold',
     paddingLeft: 5.33,
   },
